@@ -1,0 +1,21 @@
+ul{
+    list-style-type: none;
+    background-color: #5ea5a5b0;
+    overflow: hidden;
+    border-radius: 10px;
+    bottom: 0%;
+    position: absolute;
+    width: 100%;
+    display: table;
+    text-align: center;
+}
+
+li {
+    display: table-cell;
+  }
+
+  a:-webkit-any-link {
+    text-decoration: none;
+    color: rgb(71, 63, 15);
+    cursor: pointer;
+  }
