@@ -19,7 +19,7 @@ function Login() {
       setPasswordError("This field is mandetory");
       return 0;
     }
-    if (passwordInput.length < 8){
+    if (passwordInput.length < 8) {
       setPasswordError("Password need to contain at least 8 charcters");
       return 0;
     }
@@ -31,7 +31,7 @@ function Login() {
       setNameError("This field is mandetory");
       return 0;
     }
-    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(userNameInput)){
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(userNameInput)) {
       setNameError("Invalid input");
       return 0;
     }
@@ -39,9 +39,9 @@ function Login() {
   }
 
   const onButtonClick = () => {
-    if ((PasswordValidation() + NameValidation()) == 2) {
+    if (PasswordValidation() + NameValidation() == 2) {
       setUserName(userNameInput);
-      AuthPassword()
+      AuthPassword();
       nevigate("/Orders");
     }
   };
@@ -61,7 +61,13 @@ function Login() {
           type="password"
           id="password"
           placeholder="Enter your password here"
-          onChange={(e) => {setPasswordInput(e.target.value)}}
+          onChange={(e) => {
+            setPasswordInput(e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") 
+              onButtonClick();
+          }}
         />
         <label className="errorLabel">{passwordError}</label>
       </div>
@@ -75,7 +81,7 @@ function Login() {
   );
 }
 function AuthPassword() {
-  const users = fetch("../assets/names")
-  console.log(users)
+  const users = fetch("../assets/names");
+  console.log(users);
 }
 export default Login;
