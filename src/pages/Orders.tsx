@@ -1,6 +1,6 @@
 import { useContext} from 'react';
 import { nameContext } from '../global/nameContext';
-import  PickOrder  from "../components/pickOrder";
+import PickOrder from '../components/PickOrder';
 import "../styles/Orders.css"
 const Orders = ()=> {
     const {userName}:any = useContext(nameContext);
