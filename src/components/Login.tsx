@@ -52,12 +52,13 @@ function Login() {
       <div className="input_container">
         <input
           type="text"
-          className="name"
+          className="userInfo"
           placeholder="Enter your name here"
           onChange={(e) => setUserNameInput(e.target.value)}
         />
         <label className="errorLabel">{nameError}</label>
         <input
+          className="userInfo"
           type="password"
           id="password"
           placeholder="Enter your password here"
@@ -65,8 +66,7 @@ function Login() {
             setPasswordInput(e.target.value);
           }}
           onKeyDown={(e) => {
-            if (e.key === "Enter") 
-              onButtonClick();
+            if (e.key === "Enter") onButtonClick();
           }}
         />
         <label className="errorLabel">{passwordError}</label>
